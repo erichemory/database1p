@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @board.name %>
+</p>
+
+<p>
+  <strong>About:</strong>
+  <%= @board.about %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @board.user.full_name %>
+</p>
+
+<b>Pins on this board:</b>
+
+<ul>
+	<% @board.pins.each do |pin| %>
+	<li><img src=" <%=pin.image%>"> <%= pin.name %></li>
+	<% end %>
+</ul>
+
+<%= link_to 'Edit', edit_board_path(@board) %> |
+<%= link_to 'Back', boards_path %>
